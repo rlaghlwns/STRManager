@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="manager.RoutineviewController">
+   <children>
+      <StackPane prefHeight="500.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox fx:id="firstpane" prefHeight="500.0" prefWidth="600.0">
+               <children>
+                  <Label alignment="BOTTOM_LEFT" maxHeight="80.0" minHeight="80.0" prefHeight="80.0" prefWidth="1000.0" style="-fx-text-fill: #fff;" text="Wendler 531 Routine">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <TextFlow maxHeight="370.0" minHeight="370.0" prefHeight="370.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" text="This program will ONLY using 90% of your 1RM, building strength is a marathon not a sprint.  The program will work on a 4 day training cycle, week 1 is your 5 reps, week 2 is your 3 reps, week 3 is you 5/3/1 rep and week 4 will be your de-load week each cycle will last one month.   At the end of the month we will add 5 pounds to the bench press and overhead press and we will add 10 pounds to the squat and deadlift. This program will start light and progress slowly but you will break personal repetition records on a weekly basis.  So if you squat 225# x 6 and then 225# x 9 you have gotten stronger, by default your 1RM will also be higher.The Wendler Strength program is a pure strength program, but fear not we will still add our conditioning met-cons daily and we will also add Olympic and gymnastics skills throughout the programming." wrappingWidth="497.5093994140625">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="30.0" />
+                     </padding>
+                  </TextFlow>
+               </children>
+            </VBox>
+            <VBox fx:id="secondpane" opacity="0.0" prefHeight="500.0" prefWidth="600.0">
+               <children>
+                  <Label alignment="BOTTOM_LEFT" maxHeight="80.0" minHeight="80.0" prefHeight="80.0" prefWidth="1000.0" style="-fx-text-fill: #fff;" text="Strong Lift 5X5 Routine">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <TextFlow maxHeight="370.0" minHeight="370.0" prefHeight="370.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" text="5x5 training is one of the original and most popular muscle mass building programs being used by elite bodybuilders and athletes. It's designed to hit a muscle group hard 2-3 times per week, while still providing enough recovery time to promote significant muscle growth.  This program is designed for those that have base training &quot;under their belt&quot; as the intensity and volume is much higher than what most beginner bodybuilders are used to. If your body isn't used to this increased intensity, you may experience prolonged recovery times and, potentially, the risk of overtraining. A recommended &quot;5x5 cycle&quot; lasts approximately 7-9 weeks, which includes 4-6 weeks of &quot;prep work&quot; followed by 3 weeks of the &quot;peak phase&quot;." wrappingWidth="497.5093994140625">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="30.0" />
+                     </padding>
+                  </TextFlow>
+               </children>
+            </VBox>
+            <VBox fx:id="thirdpane" opacity="0.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+               <children>
+                  <Label alignment="BOTTOM_LEFT" maxHeight="80.0" minHeight="80.0" prefHeight="80.0" prefWidth="1000.0" style="-fx-text-fill: #fff;" text="Select Training Program">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="77.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Button fx:id="wendlerbtn" mnemonicParsing="false" onAction="#wendlerbtn" text="Wendler 531 Routine">
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <HBox>
+                     <children>
+                        <Label style="-fx-text-fill: #fff;" text="If you want more information of this">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Hyperlink fx:id="wendlerhyperlink" onAction="#wendlerhyperlink" text="click here!">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Hyperlink>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </HBox>
+                  <Button fx:id="strongliftbtn" mnemonicParsing="false" onAction="#strongliftbtn" text="Strong Lift 5X5 Routine">
+                     <VBox.margin>
+                        <Insets left="20.0" top="30.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <HBox>
+                     <children>
+                        <Label style="-fx-text-fill: #fff;" text="If you want more information of this">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Hyperlink fx:id="stronglifthyperlink" onAction="#stronglifthyperlink" text="click here!">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Hyperlink>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+      <HBox alignment="CENTER" maxHeight="50.0" minHeight="50.0" prefHeight="500.0" prefWidth="600.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="450.0">
+         <children>
+            <Button fx:id="prevbtn" mnemonicParsing="false" onAction="#prevbtn" text="&lt;&lt;" />
+            <Button fx:id="nextbtn" mnemonicParsing="false" onAction="#nextbtn" text="&gt;&gt;" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane stylesheets="@application.css" fx:id="ap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="manager.MainviewController">
+   <children>
+      <MenuBar prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="575.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#open" text="Open" />
+              <MenuItem mnemonicParsing="false" onAction="#save" text="Save" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#quit" text="Quit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+                  <MenuItem mnemonicParsing="false" text="How to Use" />
+              <MenuItem mnemonicParsing="false" text="About Strength Manager" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <SplitPane dividerPositions="0.2" layoutX="87.0" layoutY="109.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0">
+               <children>
+                  <VBox prefHeight="572.8" prefWidth="157.6" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="62.0" prefWidth="158.0" style="-fx-background-color: #fff;">
+                           <children>
+                              <TextField fx:id="search" prefHeight="0.0" prefWidth="148.0" text="Search...">
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <TableView fx:id="table" prefHeight="798.0" prefWidth="254.0">
+                          <columns>
+                            <TableColumn fx:id="tableColumn" minWidth="260.0" prefWidth="260.0" text="Member" />
+                          </columns>
+                        </TableView>
+                        <HBox alignment="CENTER" prefHeight="0.0" prefWidth="158.0" spacing="20.0" style="-fx-background-color: #fff;">
+                           <children>
+                              <StackPane fx:id="tableBtnStack" prefHeight="22.0" prefWidth="339.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#newbtn" prefWidth="70.0" text="New" />
+                                          <Button fx:id="delbtn" mnemonicParsing="false" onAction="#delbtn" prefWidth="70.0" text="Delete" />
+                                          <Button fx:id="editbtn" mnemonicParsing="false" onAction="#editbtn" prefWidth="70.0" text="Edit" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#modificationbtn" prefWidth="220.0" text="Modification" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </StackPane>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TabPane fx:id="tab1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.4" prefWidth="417.6" style="-fx-background-color: #fff;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <tabs>
+                        <Tab text="Member Information">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                                 <children>
+                                    <VBox prefHeight="738.4" prefWidth="1019.2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="150.0" prefWidth="200.0">
+                                             <children>
+                                                <Label fx:id="strNameGender" style="-fx-background-color: #fff;" text=" ">
+                                                   <font>
+                                                      <Font size="36.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="20.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <StackPane fx:id="infoStack" prefHeight="600.0" prefWidth="200.0">
+                                             <children>
+                                                <GridPane alignment="CENTER" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #fff;">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="292.39996337890625" minWidth="10.0" prefWidth="186.39998779296874" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="422.0" minWidth="10.0" prefWidth="408.8000122070313" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <Label text="Name">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Age" GridPane.rowIndex="1">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Gender" GridPane.rowIndex="2">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Address" GridPane.rowIndex="3">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Phone number" GridPane.rowIndex="4">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="E-mail" GridPane.rowIndex="5">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Text fx:id="name" strokeType="OUTSIDE" strokeWidth="0.0" text=" " GridPane.columnIndex="1">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Text fx:id="age" strokeType="OUTSIDE" strokeWidth="0.0" text=" " GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Text fx:id="gender" strokeType="OUTSIDE" strokeWidth="0.0" text=" " GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Text fx:id="address" strokeType="OUTSIDE" strokeWidth="0.0" text=" " GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Text fx:id="phonenumber" strokeType="OUTSIDE" strokeWidth="0.0" text=" " GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Text fx:id="email" strokeType="OUTSIDE" strokeWidth="0.0" text=" " GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Text>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets top="10.0" />
+                                                   </padding>
+                                                </GridPane>
+                                                <GridPane alignment="CENTER" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #fff;">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="292.39996337890625" minWidth="10.0" prefWidth="186.39998779296874" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="422.0" minWidth="10.0" prefWidth="408.8000122070313" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <Label text="Name">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Age" GridPane.rowIndex="1">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Gender" GridPane.rowIndex="2">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Address" GridPane.rowIndex="3">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Phone number" GridPane.rowIndex="4">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="E-mail" GridPane.rowIndex="5">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="editName" GridPane.columnIndex="1">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <TextField fx:id="editAge" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <TextField fx:id="editGender" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <TextField fx:id="editAddress" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <TextField fx:id="editPhonenumber" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <TextField fx:id="editEmail" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </TextField>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets top="10.0" />
+                                                   </padding>
+                                                </GridPane>
+                                             </children>
+                                          </StackPane>
+                                          <HBox alignment="CENTER_RIGHT" prefHeight="150.0" prefWidth="1019.0" style="-fx-background-color: #fff;">
+                                             <padding>
+                                                <Insets right="100.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Strength(Performance)">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                                 <children>
+                                    <VBox prefHeight="738.4" prefWidth="1019.2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                                             <children>
+                                                <Label fx:id="strNameGender" text=" ">
+                                                   <font>
+                                                      <Font size="36.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="20.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <StackPane fx:id="strStack" prefHeight="600.0" prefWidth="200.0">
+                                             <children>
+                                                <GridPane alignment="CENTER" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #fff;">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="292.39996337890625" minWidth="10.0" prefWidth="186.39998779296874" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="422.0" minWidth="10.0" prefWidth="408.8000122070313" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <Label text="Body weight">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Bench press" GridPane.rowIndex="1">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Squat" GridPane.rowIndex="2">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Deadlift" GridPane.rowIndex="3">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Overhead press" GridPane.rowIndex="4">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Pendlay Row" GridPane.rowIndex="5">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Text fx:id="weight" strokeType="OUTSIDE" strokeWidth="0.0" text=" " GridPane.columnIndex="1">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Text fx:id="bp1rm" strokeType="OUTSIDE" strokeWidth="0.0" text=" " GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Text fx:id="sq1rm" strokeType="OUTSIDE" strokeWidth="0.0" text=" " GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Text fx:id="dl1rm" strokeType="OUTSIDE" strokeWidth="0.0" text=" " GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Text fx:id="ohp1rm" strokeType="OUTSIDE" strokeWidth="0.0" text=" " GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Text fx:id="pr1rm" strokeType="OUTSIDE" strokeWidth="0.0" text=" " GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Text>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets top="10.0" />
+                                                   </padding>
+                                                </GridPane>
+                                                <GridPane alignment="CENTER" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #fff;">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="292.39996337890625" minWidth="10.0" prefWidth="186.39998779296874" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="422.0" minWidth="10.0" prefWidth="408.8000122070313" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <Label text="Body weight">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Bench press" GridPane.rowIndex="1">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Squat" GridPane.rowIndex="2">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Deadlift" GridPane.rowIndex="3">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Overhead press" GridPane.rowIndex="4">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Pendlay Row" GridPane.rowIndex="5">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="editbodyweight" GridPane.columnIndex="1">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <TextField fx:id="editbp" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <TextField fx:id="editsq" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <TextField fx:id="editdl" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <TextField fx:id="editohp" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <TextField fx:id="editpr" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </TextField>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets top="10.0" />
+                                                   </padding>
+                                                </GridPane>
+                                             </children>
+                                          </StackPane>
+                                          <HBox alignment="CENTER_RIGHT" prefHeight="150.0" prefWidth="1019.0" style="-fx-background-color: #fff;">
+                                             <padding>
+                                                <Insets right="100.0" />
+                                             </padding>
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#onermbtn" prefHeight="40.0" prefWidth="200.0" text="OneRMCalculator">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Wilks Point">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                                 <children>
+                                    <GridPane layoutX="180.0" layoutY="252.0" prefHeight="568.0" prefWidth="635.2" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="30.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #fff;">
+                                             <children>
+                                                <Label text="Name">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Text fx:id="wpName" fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="empty">
+                                                   <VBox.margin>
+                                                      <Insets left="40.0" top="25.0" />
+                                                   </VBox.margin>
+                                                   <font>
+                                                      <Font name="System Bold" size="36.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #fff;" GridPane.rowIndex="1">
+                                             <children>
+                                                <Label text="Body weight">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Text fx:id="wpBodyweight" fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="empty">
+                                                   <VBox.margin>
+                                                      <Insets left="40.0" top="25.0" />
+                                                   </VBox.margin>
+                                                   <font>
+                                                      <Font name="System Bold" size="36.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #fff;" GridPane.rowIndex="2">
+                                             <children>
+                                                <Label text="Wilks Point">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Text fx:id="wpWilkspoint" fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="empty">
+                                                   <VBox.margin>
+                                                      <Insets left="40.0" top="25.0" />
+                                                   </VBox.margin>
+                                                   <font>
+                                                      <Font name="System Bold" size="36.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #fff;" GridPane.columnIndex="1">
+                                             <children>
+                                                <Label text="Gender">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Text fx:id="wpGender" fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="empty">
+                                                   <VBox.margin>
+                                                      <Insets left="40.0" top="25.0" />
+                                                   </VBox.margin>
+                                                   <font>
+                                                      <Font name="System Bold" size="36.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #fff;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <children>
+                                                <Label text="Weight class">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Text fx:id="wpWeightclass" fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="empty">
+                                                   <VBox.margin>
+                                                      <Insets left="40.0" top="25.0" />
+                                                   </VBox.margin>
+                                                   <font>
+                                                      <Font name="System Bold" size="36.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #fff;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <children>
+                                                <Label text="Level">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Text fx:id="wpLevel" fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="empty">
+                                                   <VBox.margin>
+                                                      <Insets left="40.0" top="25.0" />
+                                                   </VBox.margin>
+                                                   <font>
+                                                      <Font name="System Bold" size="36.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Workout Schedule">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                                 <children>
+                                    <StackPane fx:id="scheduleStack" layoutX="231.0" layoutY="183.0" prefHeight="738.4" prefWidth="1019.2" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+                                       <children>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="50.0" style="-fx-background-color: #fff;">
+                                             <children>
+                                                <Label text="You don't have any training program">
+                                                   <font>
+                                                      <Font size="36.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="routinebtn" mnemonicParsing="false" onAction="#routinebtn" text="Create My Routine">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="77.0" />
+                                             </padding>
+                                          </VBox>
+                                          <TabPane fx:id="tab2" prefHeight="200.0" prefWidth="200.0" side="LEFT" style="-fx-background-color: #fff;" tabClosingPolicy="UNAVAILABLE">
+                                            <tabs>
+                                              <Tab text="Month 1">
+                                                <content>
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                                                         <children>
+                                                            <GridPane fx:id="month1" prefHeight="679.0" prefWidth="930.0" style="-fx-background-color: #fff;">
+                                                               <columnConstraints>
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                               </columnConstraints>
+                                                               <rowConstraints>
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                               </rowConstraints>
+                                                            </GridPane>
+                                                         </children>
+                                                      </AnchorPane>
+                                                </content>
+                                              </Tab>
+                                              <Tab text="Month 2">
+                                                <content>
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                                                         <children>
+                                                            <GridPane fx:id="month2" prefHeight="679.0" prefWidth="930.0" style="-fx-background-color: #fff;">
+                                                               <columnConstraints>
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                               </columnConstraints>
+                                                               <rowConstraints>
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                               </rowConstraints>
+                                                            </GridPane>
+                                                         </children>
+                                                      </AnchorPane>
+                                                </content>
+                                              </Tab>
+                                                <Tab text="Month 3">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                                                         <children>
+                                                            <GridPane fx:id="month3" prefHeight="679.0" prefWidth="930.0" style="-fx-background-color: #fff;">
+                                                               <columnConstraints>
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                               </columnConstraints>
+                                                               <rowConstraints>
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                               </rowConstraints>
+                                                            </GridPane>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </Tab>
+                                                <Tab text="Remove Schedule">
+                                                  <content>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <VBox alignment="CENTER" prefHeight="679.0" prefWidth="930.0" spacing="50.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <Label text="Remove Schedule">
+                                                                     <font>
+                                                                        <Font size="36.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Button mnemonicParsing="false" onAction="#scheduleRemovebtn" text="Remove">
+                                                                     <font>
+                                                                        <Font size="24.0" />
+                                                                     </font>
+                                                                  </Button>
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="77.0" />
+                                                               </padding>
+                                                            </VBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                  </content>
+                                                </Tab>
+                                            </tabs>
+                                          </TabPane>
+                                       </children></StackPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

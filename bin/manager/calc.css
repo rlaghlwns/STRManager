@@ -1,0 +1,7 @@
+.root{
+    -fx-base: #000000;
+}
+.label {
+    -fx-font-size: 12pt;
+    -fx-text-fill: white;
+}

@@ -1,0 +1,26 @@
+.root{
+    -fx-base: #000000;
+}
+.split-pane{
+    -fx-base: #000000;
+}
+.table-view {
+    -fx-base: #000000;
+    -fx-control-inner-background: #000000;
+    -fx-background-color: #000000;
+    -fx-padding: 5;
+    -fx-accent: #ffffff;
+}
+.label {
+	-fx-base: #ffffff;
+}
+.tab-pane {
+	-fx-base: #000000;
+	-fx-focus-color: #ffffff;
+	-fx-faint-focus-color: #ffffff;
+}
+.text-field {
+	-fx-base: #000000;
+	-fx-focus-color: #ffffff;
+	-fx-faint-focus-color: #ffffff;
+}
